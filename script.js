@@ -10,11 +10,13 @@ function playSound(e) {
   //access the div element that has corresponding keyCode as attribute
   //ie: access element with div[data-key="45"]
 
+
   if (!audio) return;
   //if audio is false, dont execute function
 
   key.classList.add('playing');
   //else, add .playing to key element
+
   audio.currentTime = 0;
   //rewind to start
   audio.play();
@@ -31,8 +33,21 @@ function removeTransition(e) {
 
 const keys = Array.from(document.querySelectorAll('.key'));
 
+
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 //listen on each key for which transitionend happened
 //cannot listen to all node elements simultaneously - need forEach
 
 window.addEventListener('keydown', playSound);
+
+keys.forEach(key => {if (key.classList.contains('key')) { 
+   key.addEventListener('click', (e) => {
+    let audioclick = document.querySelector(`audio[data-key="${key.getAttribute('data-key')}"`);
+    if (!audioclick) return;
+    key.classList.add(`playing`);
+    audioclick.currentTime = 0;
+    audioclick.play();
+  })
+}});
+
+
