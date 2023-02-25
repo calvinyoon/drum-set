@@ -1,0 +1,22 @@
+{
+  "name": "drum-set",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "browserify script.js > bundle.js && live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvinyoon/drum-set.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calvinyoon/drum-set/issues"
+  },
+  "homepage": "https://github.com/calvinyoon/drum-set#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

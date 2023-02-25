@@ -1,3 +1,6 @@
+var _ = require("lodash");
+console.log(_);
+
 function playSound(e) {
   //input is e which has keyCode.
 
